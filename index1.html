@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Date Delight — Premium Dates & Indulgences</title>
+  <meta name="description" content="Date Delight – Luxury premium dates and clean-label indulgences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles1.css" />
+</head>
+<body>
+  <div class="announce" role="status">Imported from UAE premium farms • Hand-graded • No refined sugar</div>
+  <header class="dd-header container">
+    <div class="brand">
+      <div class="logo">Date Delight</div>
+      <div class="tag">Premium • Natural • Indulgent</div>
+    </div>
+    <nav class="nav">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#gifting">Gifting</a>
+      <button class="cart-btn" aria-label="Open cart" id="openCartBtn">
+        <span class="icon">🛒</span>
+        <span class="cart-badge" id="cartCount">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Luxury Premium Dates</h1>
+        <p>Handpicked Medjool & Safawi. Guilt-free indulgences crafted with clean ingredients.
+           Elevate festive gifting and everyday wellness.</p>
+        <a href="#shop" class="btn btn-primary">Shop the Collection</a>
+      </div>
+      <div class="hero-art">
+        <img src="DD_9.png" alt="Assorted premium dates and indulgences" loading="lazy"/>
+      </div>
+    </div>
+  </section>
+
+  <main id="shop" class="container">
+    <h2 class="section-title">Our Bestsellers</h2>
+    <div class="toolbar">
+      <div class="pills" id="filters">
+        <button class="pill active" data-filter="all">All</button>
+        <button class="pill" data-filter="festivals">Festivals</button>
+        <button class="pill" data-filter="corporate">Corporate Gifts</button>
+        <button class="pill" data-filter="wedding">Wedding Gifts</button>
+      </div>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </main>
+
+  <section id="about" class="container about">
+    <div class="about-card">
+      <h3>Our Promise</h3>
+      <ul>
+        <li>100% Natural • No refined sugar</li>
+        <li>Source-verified premium farms</li>
+        <li>Small-batch crafted in India</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <h3>Gifting & Corporate</h3>
+      <p>Create luxury hampers with our choco-coated gift dates, mini stuffed packs, and more.</p>
+      <a href="#gifting" class="btn btn-ghost">Explore Gifting</a>
+    </div>
+  </section>
+
+  <section id="ethics" class="container ethics">
+    <div class="ethics-inner">
+      <div>
+        <h2 class="section-title">Ethical & Transparent Sourcing</h2>
+        <p>We partner with responsible farms and processors across the Middle East and India. Fair pricing for growers, zero child labor policy, and batch traceability. Each harvest is hand-graded, then packed in certified facilities.</p>
+        <ul class="ethics-list">
+          <li>Fair trade aligned purchasing</li>
+          <li>No added sugar, no preservatives</li>
+          <li>Recyclable packaging where possible</li>
+        </ul>
+        <div class="mini-collage">
+          <img src="DD_2.jpeg" alt="Date syrup bottle"/>
+          <img src="DD_3.jpeg" alt="Date powder jar"/>
+          <img src="DD_4.jpeg" alt="Energy bars"/>
+        </div>
+      </div>
+      <div class="ethics-art">
+        <img src="DD_8.png" alt="Date Delight festive gift hamper"/>
+      </div>
+    </div>
+  </section>
+
+  <section id="gifting" class="container gifting">
+    <div class="gifting-banner">
+      <div class="copy">
+        <h2>Festive Luxury Gifting</h2>
+        <p>Curate elegant hampers for <strong>Eid</strong>, <strong>Diwali</strong>, <strong>Onam</strong>, weddings, and corporate milestones. Personal notes and custom sleeves available.</p>
+        <button class="btn btn-primary" id="buildHamperBtn">Build Your Hamper</button>
+      </div>
+      <div class="art">
+        <img src="DD_8.png" alt="Date Delight festive gift hamper"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hamper Builder Modal -->
+  <div class="hamper-overlay" id="hamperOverlay" aria-hidden="true"></div>
+  <div class="hamper-modal" id="hamperModal" aria-hidden="true" role="dialog" aria-labelledby="hamperTitle">
+    <div class="hamper-header">
+      <h3 id="hamperTitle">Build Your Hamper</h3>
+      <button class="icon-btn" id="hamperCloseBtn" aria-label="Close">✕</button>
+    </div>
+    <div class="hamper-body" id="hamperList"></div>
+    <div class="hamper-footer">
+      <div class="row"><span>Total</span><strong>₹ <span id="hamperTotal">0</span></strong></div>
+      <div class="actions">
+        <button class="btn btn-ghost" id="hamperCloseBtn2">Cancel</button>
+        <button class="btn btn-primary" id="hamperAddBtn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Date Delight. All rights reserved.</p>
+      <div class="links">
+        <a href="#">Shipping & Returns</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="icon-btn" id="closeCartBtn" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-body" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="row"><span>Subtotal</span><strong>₹ <span id="cartSubtotal">0</span></strong></div>
+      <div class="row small">Shipping, taxes, and discounts calculated at checkout.</div>
+      <div class="actions">
+        <button class="btn btn-ghost" id="clearCartBtn">Clear</button>
+        <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+  </aside>
+  <div class="backdrop" id="cartBackdrop" aria-hidden="true"></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app1.js"></script>
+</body>
+</html>
